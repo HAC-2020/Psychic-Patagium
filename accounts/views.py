@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.views.generic import CreateView
 
@@ -8,6 +9,11 @@ from .models import User
 
 def signup_page(request):
     return render(request, "registration/signup.html")
+
+
+@login_required
+def profile(request):
+    return render(request, "registration/profile.html")
 
 
 class CustomerSignUpView(CreateView):
@@ -30,4 +36,3 @@ class ShopOwnerSignUpView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect("shop_select")
-

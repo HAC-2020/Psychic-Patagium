@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block page_content %}
+
+<br />
+
+{% if user.is_authenticated and user.is_customer %}
+<h2>It's Customer</h2>
+{% elif user.is_authenticated and user.is_shopowner %}
+<h2>It's Shop Owner</h2>
+{% else %}
+<h2>It's someone else</h2>
+{% endif %}
+
+<br />
+
+{% endblock %}
