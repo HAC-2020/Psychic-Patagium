@@ -1,0 +1,7 @@
+<h2>Sign Up Form</h2>
+
+<form method="post" novalidate>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="button">Submit</button>
+  <!-- will have to change this to type="submit" -->
+</form>
