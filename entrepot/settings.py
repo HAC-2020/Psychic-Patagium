@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "accounts.apps.AccountsConfig",
+    "orders.apps.OrdersConfig",
+    "storefront.apps.StorefrontConfig",
 ]
 
 MIDDLEWARE = [
@@ -112,3 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+# Custom User model
+# https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#substituting-a-custom-user-model
+AUTH_USER_MODEL = "accounts.User"
